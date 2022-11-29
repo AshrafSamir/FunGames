@@ -1,4 +1,4 @@
-#It is a website with mixed games in it
+It is a website with mixed games in it
 
 Game1:
 
