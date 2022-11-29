@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="numberForm.js" defer></script>
+  </head>
+  <body>
+    <form id="form" action="nameForm.html" method="get">
+      <div id="players_number">
+        <label for="numberOfPlayers">Select number of players:</label>
+        <select name="numberOfPlayers" id="numberOfPlayers">
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+      <div id="cards_number">
+        <label for="numberOfCards">Select number of cards per player:</label>
+        <select name="numberOfCards" id="numberOfCards">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div id="start">
+        <button type="submit">Start</button>
+      </div>
+    </form>
+  </body>
+</html>
