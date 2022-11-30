@@ -16,12 +16,16 @@ let numberOfPlayers = window.location.search
   .split("=")[1];
 let numberOfCards = window.location.search.slice(1).split("&")[1].split("=")[1];
 let numberOfTeams = teams.length / 2;
+let timePerTeam = window.location.search.slice(1).split("&")[3].split("=")[1];
 
 let cards = [];
 let card = "";
 let playerNumber = 0;
 
 function createForm() {
+  console.log(cards);
+  console.log(timePerTeam);
+  console.log(teams);
   let form = document.createElement("div");
   form.setAttribute("id", `form${playerNumber}`);
   document.body.appendChild(form);
@@ -71,16 +75,12 @@ function createCards() {
   }
   cards.push(card);
   card = "";
-  console.log(cards);
-  console.log(window.location.href);
   let url =
-    "/components/game/game.html?numberOfPlayers=" +
-    numberOfPlayers +
-    "&numberOfCards=" +
-    numberOfCards +
-    "&names=" +
-    names +
-    "&cards=" +
-    cards;
+    "/components/game/game.html?cards=" +
+    cards +
+    "&timePerTeam=" +
+    timePerTeam +
+    "&teams=" +
+    teams;
   window.location.href = url;
 }

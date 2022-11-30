@@ -11,6 +11,7 @@ for (let i = 0; i < slice1.length; i++) {
 
 numberOfPlayers = slice2[0][1];
 numberOfCards = slice2[1][1];
+timePerTeam = window.location.search.slice(1).split("&")[2].split("=")[1];
 
 function createForm() {
   let form = document.getElementById("form");
@@ -42,7 +43,9 @@ function createTeams() {
     "&numberOfCards=" +
     numberOfCards +
     "&teams=" +
-    teams;
+    teams +
+    "&timePerTeam=" +
+    timePerTeam;
   window.location.href = url;
 }
 
