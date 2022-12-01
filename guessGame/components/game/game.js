@@ -4,8 +4,10 @@ let cards = window.location.search
   .split("=")[1]
   .slice(1, -1)
   .split(",");
+
 let timePerTeam =
-  window.location.search.slice(1).split("&")[1].split("=")[1] * 10;
+  window.location.search.slice(1).split("&")[1].split("=")[1] * 5;
+
 let teams = window.location.search
   .slice(1)
   .split("&")[2]
@@ -15,36 +17,80 @@ let teams = window.location.search
 let playAgain = 0;
 let phaseNumber = 1;
 let points = [];
+
 for (let i = 0; i < teams.length; i += 2) {
   points.push(0);
 }
+
 let timer = 0;
 let i = 0;
 let interval;
+let turn = [];
+for (let i = 0; i < teams.length; i += 2) {
+  turn.push(0);
+}
 let cardNumber = Math.floor(Math.random() * cards.length);
+
 let phase = document.createElement("h1");
+phase.setAttribute("id", "phase");
 let header = document.createElement("h2");
+header.setAttribute("id", "team");
+
 let player1 = document.createElement("h3");
+let player1Img = document.createElement("img");
+player1Img.setAttribute("src", "../../assets/1.png");
+player1Img.setAttribute("id", "player1Img");
+player1.setAttribute("id", "player1");
+
 let player2 = document.createElement("h3");
+let player2Img = document.createElement("img");
+player2Img.setAttribute("src", "../../assets/1.png");
+player2Img.setAttribute("id", "player2Img");
+player2.setAttribute("id", "player2");
+
+// let turnEl = document.createElement("h3");
+let turnImg = document.createElement("img");
+turnImg.setAttribute("src", "../../assets/arrow.png");
+turnImg.setAttribute("id", "turnImg");
+// turnEl.innerText = "Your turn to perform!";
+// turnEl.setAttribute("id", "turnElRight");
+
 let cardDiv = document.getElementById("card");
 let timerDiv = document.getElementById("timer");
 let winnerDiv = document.getElementById("winner");
 let gameDiv = document.getElementById("game");
 let correctButton = document.getElementById("correctButton");
+correctButton.setAttribute("id", "correctButton");
+
+function switchTurn() {
+  if (turn[i / 2] == 0) {
+    turn[i / 2] = 1;
+    //turnEl.setAttribute("id", "turnElLeft");
+    turnImg.setAttribute("id", "turnImgLeft");
+  } else if (turn[i / 2] == 1) {
+    turn[i / 2] = 0;
+    //turnEl.setAttribute("id", "turnElRight");
+    turnImg.setAttribute("id", "turnImgRight");
+  }
+}
 
 function nextTeam(i) {
   cards = cards.sort((a, b) => 0.5 - Math.random());
-  if (i > teams.length) {
-    i = 0;
-  }
+
+  switchTurn();
+
   player1.innerText = teams[i];
   player2.innerText = teams[i + 1];
   header.innerText = "Team " + (i / 2 + 1);
   phase.innerText = "Phase " + phaseNumber;
-  document.body.appendChild(phase);
-  document.body.appendChild(header);
-  document.body.appendChild(player1);
-  document.body.appendChild(player2);
+  gameDiv.appendChild(phase);
+  gameDiv.appendChild(header);
+  gameDiv.appendChild(player1);
+  gameDiv.appendChild(player1Img);
+  gameDiv.appendChild(player2);
+  gameDiv.appendChild(player2Img);
+  // gameDiv.appendChild(turnEl);
+  gameDiv.appendChild(turnImg);
 }
 
 function cardClick() {
@@ -57,7 +103,12 @@ function cardClick() {
     if (timer == timePerTeam) {
       clearTimeout(interval);
       timer = 0;
-      i += 2;
+      if (i == teams.length - 2) {
+        i = 0;
+      } else {
+        i += 2;
+      }
+
       timerDiv.innerText = timer;
       cardDiv.innerText = "Click to start";
       correctButton.style.display = "none";
@@ -68,9 +119,9 @@ function cardClick() {
 }
 
 function correctGuess() {
-  if (i > teams.length - 1) {
-    i = 0;
-  }
+  // if (i > teams.length - 1) {
+  //   i = 0;
+  // }
 
   points[i / 2] += 1;
 
@@ -93,12 +144,12 @@ function nextPhase() {
     player2.innerText = "";
     header.innerText = "";
     phase.innerText = "";
-    game.style.display = "none";
+    //game.style.display = "none";
     correctButton.style.display = "none";
     clearTimeout(interval);
     declareWinner();
     setTimeout(function () {
-      game.style.display = "block";
+      game.style.display = "flex";
       timerDiv.innerText = timer;
       phase.innerText = "Phase 2";
       cardDiv.innerText = "Click to start";
@@ -114,16 +165,20 @@ function nextPhase() {
   if (phaseNumber == 3) {
     i = 0;
     timer = 0;
+
     player1.innerText = "";
     player2.innerText = "";
     header.innerText = "";
     phase.innerText = "";
-    game.style.display = "none";
+
+    //game.style.display = "none";
     correctButton.style.display = "none";
+
     clearTimeout(interval);
     declareWinner();
+
     setTimeout(function () {
-      game.style.display = "block";
+      game.style.display = "flex";
       timerDiv.innerText = timer;
       phase.innerText = "Phase 3";
       cardDiv.innerText = "Click to start";
@@ -140,14 +195,12 @@ function nextPhase() {
     correctButton.style.display = "none";
     declareWinner();
     setTimeout(function () {
-      window.location.assign("index.html");
+      window.location.href = "/components/forms/numberForm.html";
     }, 2000);
   }
 }
 
 function declareWinner() {
-  console.log(points);
-  console.log(points.indexOf(Math.max(...points)));
   let winner = points.indexOf(Math.max(...points));
   alert("Team " + (winner + 1) + " wins! with " + points[winner] + " points!");
 }
