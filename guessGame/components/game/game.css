@@ -66,7 +66,7 @@ body {
 #player1 {
   color: #252422;
   position: absolute;
-  left: 8rem;
+  left: 7.5rem;
   bottom: 8rem;
   font-size: 2rem;
 }
@@ -80,7 +80,7 @@ body {
 #player2 {
   color: #252422;
   position: absolute;
-  right: 8rem;
+  right: 7.5rem;
   bottom: 8rem;
   font-size: 2rem;
 }

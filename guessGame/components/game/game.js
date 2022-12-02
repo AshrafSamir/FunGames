@@ -2,18 +2,16 @@ let cards = window.location.search
   .slice(1)
   .split("&")[0]
   .split("=")[1]
-  .slice(1, -1)
+  .slice(0, -1)
   .split(",");
-
 let timePerTeam =
-  window.location.search.slice(1).split("&")[1].split("=")[1] * 5;
+  window.location.search.slice(1).split("&")[1].split("=")[1] * 60;
 
 let teams = window.location.search
   .slice(1)
   .split("&")[2]
   .split("=")[1]
   .split(",");
-
 let playAgain = 0;
 let phaseNumber = 1;
 let points = [];
@@ -157,7 +155,7 @@ function nextPhase() {
         .slice(1)
         .split("&")[0]
         .split("=")[1]
-        .slice(1, -1)
+        .slice(0, -1)
         .split(",");
       nextTeam(i);
     }, 1000);
@@ -186,7 +184,7 @@ function nextPhase() {
         .slice(1)
         .split("&")[0]
         .split("=")[1]
-        .slice(1, -1)
+        .slice(0, -1)
         .split(",");
       nextTeam(i);
     }, 1000);
