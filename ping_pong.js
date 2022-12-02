@@ -66,8 +66,8 @@ function startplay(){
                 if(Number(document.querySelector("#computer").innerHTML)==6)
                 {
                     alert("computer Won")
-                    Number(document.querySelector("#computer").innerHTML)=0;
-                    Number(document.querySelector("#user").innerHTML)=0;
+                    document.querySelector("#computer").innerHTML=0;
+                    document.querySelector("#user").innerHTML=0;
                    
 
                 }
@@ -81,8 +81,8 @@ function startplay(){
                 if(Number(document.querySelector("#user").innerHTML)==6)
                 {
                     alert("Yes You Won nice ra7oob")
-                    Number(document.querySelector("#computer").innerHTML)=0;
-                    Number(document.querySelector("#user").innerHTML)=0;
+                  document.querySelector("#computer").innerHTML=0;
+                    document.querySelector("#user").innerHTML=0;
                 }
                 reset()
                 return
