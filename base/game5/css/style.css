@@ -13,6 +13,7 @@
     height: 20px;
     border-radius: 50%;
     background-color: red;
+    top:200px;
     position: absolute;
 }
 .hit
@@ -20,7 +21,23 @@
     width: 100px;
     height: 20px;
     bottom: 0;
-    left: 200px;
+    /*left: 150px;*/
     position: absolute;
     background-color: rgb(102, 102, 163);
+}
+.hited
+{
+    width: 60px;
+    height: 10px;
+    background-color: grey;
+    margin: 4px;
+}
+.parentHited
+{
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    /*background-color: green;*/
+    display: flex;
+    flex-wrap:wrap;
 }
