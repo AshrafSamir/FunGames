@@ -1,6 +1,6 @@
 body
 {
-    background-color: rgb(251, 255, 254);
+    background-color: #e5e5e5;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -29,7 +29,7 @@ button
     margin: auto;
     display: flex;
     color: #d90429;
-    background-color: #d5f2e3;
+    background-color: #e5e5e5;
     box-shadow: 10px 10px 5px lightblue;
     border-radius: 34%;
     cursor: pointer;
