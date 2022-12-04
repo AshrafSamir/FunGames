@@ -1,17 +1,21 @@
-let cards = window.location.search
-  .slice(1)
-  .split("&")[0]
-  .split("=")[1]
-  .slice(0, -1)
-  .split(",");
-let timePerTeam =
-  window.location.search.slice(1).split("&")[1].split("=")[1] * 60;
+// let cards = window.location.search
+//   .slice(1)
+//   .split("&")[0]
+//   .split("=")[1]
+//   .slice(0, -1)
+//   .split(",");
+let cards = localStorage.getItem("cards").split(",");
+console.log(cards);
 
+let timePerTeam =
+  window.location.search.slice(1).split("&")[0].split("=")[1] * 60;
+console.log(timePerTeam);
 let teams = window.location.search
   .slice(1)
-  .split("&")[2]
+  .split("&")[1]
   .split("=")[1]
   .split(",");
+console.log(teams);
 let playAgain = 0;
 let phaseNumber = 1;
 let points = [];
@@ -74,7 +78,7 @@ function switchTurn() {
 
 function nextTeam(i) {
   cards = cards.sort((a, b) => 0.5 - Math.random());
-
+  interval = null;
   switchTurn();
 
   player1.innerText = teams[i];
@@ -94,26 +98,28 @@ function nextTeam(i) {
 function cardClick() {
   correctButton.style.display = "block";
   cardDiv.innerText = cards[cardNumber];
-  interval = setTimeout(function again() {
-    timer++;
-    timerDiv.innerText = timer;
-    interval = setTimeout(again, 1000);
-    if (timer == timePerTeam) {
-      clearTimeout(interval);
-      timer = 0;
-      if (i == teams.length - 2) {
-        i = 0;
-      } else {
-        i += 2;
-      }
-
+  if (!interval) {
+    interval = setTimeout(function again() {
+      timer++;
       timerDiv.innerText = timer;
-      cardDiv.innerText = "Click to start";
-      correctButton.style.display = "none";
-      alert("Time is up!");
-      nextTeam(i);
-    }
-  }, 1000);
+      interval = setTimeout(again, 1000);
+      if (timer == timePerTeam) {
+        clearTimeout(interval);
+        timer = 0;
+        if (i == teams.length - 2) {
+          i = 0;
+        } else {
+          i += 2;
+        }
+
+        timerDiv.innerText = timer;
+        cardDiv.innerText = "Click to start";
+        correctButton.style.display = "none";
+        alert("Time is up!");
+        nextTeam(i);
+      }
+    }, 1000);
+  }
 }
 
 function correctGuess() {
@@ -142,21 +148,14 @@ function nextPhase() {
     player2.innerText = "";
     header.innerText = "";
     phase.innerText = "";
-    //game.style.display = "none";
     correctButton.style.display = "none";
     clearTimeout(interval);
     declareWinner();
     setTimeout(function () {
-      game.style.display = "flex";
       timerDiv.innerText = timer;
       phase.innerText = "Phase 2";
       cardDiv.innerText = "Click to start";
-      cards = window.location.search
-        .slice(1)
-        .split("&")[0]
-        .split("=")[1]
-        .slice(0, -1)
-        .split(",");
+      cards = localStorage.getItem("cards").split(",");
       nextTeam(i);
     }, 1000);
   }
@@ -169,38 +168,66 @@ function nextPhase() {
     header.innerText = "";
     phase.innerText = "";
 
-    //game.style.display = "none";
     correctButton.style.display = "none";
 
     clearTimeout(interval);
     declareWinner();
 
     setTimeout(function () {
-      game.style.display = "flex";
       timerDiv.innerText = timer;
       phase.innerText = "Phase 3";
       cardDiv.innerText = "Click to start";
-      cards = window.location.search
-        .slice(1)
-        .split("&")[0]
-        .split("=")[1]
-        .slice(0, -1)
-        .split(",");
+      cards = localStorage.getItem("cards").split(",");
       nextTeam(i);
     }, 1000);
   }
   if (phaseNumber == 4) {
     correctButton.style.display = "none";
     declareWinner();
-    setTimeout(function () {
-      window.location.href = "/components/forms/numberForm.html";
-    }, 2000);
+    // setTimeout(function () {
+    //   window.location.href = "/components/forms/numberForm.html";
+    // }, 2000);
   }
 }
 
+// function declareWinner() {
+//   let winner = points.indexOf(Math.max(...points));
+//   alert("Team " + (winner + 1) + " wins! with " + points[winner] + " points!");
+// }
+
+let winnerHeader = document.createElement("h2");
+winnerHeader.setAttribute("id", "winnerHeader");
+
 function declareWinner() {
-  let winner = points.indexOf(Math.max(...points));
-  alert("Team " + (winner + 1) + " wins! with " + points[winner] + " points!");
+  gameDiv.style.display = "none";
+  winnerDiv.style.display = "flex";
+  nextButton.style.display = "block";
+  if (phaseNumber == 4) {
+    nextButton.innerText = "Finish";
+  }
+
+  winnerHeader.innerText = "Phase " + (phaseNumber - 1) + " Results!";
+  winnerDiv.appendChild(winnerHeader);
+
+  for (let i = 0; i < points.length; i++) {
+    let winner = document.createElement("h1");
+    winner.innerText = "Team " + (i + 1) + " Scores: " + points[i] + " points.";
+    winnerDiv.appendChild(winner);
+  }
 }
+
+let nextButton = document.createElement("button");
+nextButton.setAttribute("id", "nextButton");
+nextButton.innerText = "Next";
+nextButton.addEventListener("click", function () {
+  if (phaseNumber == 4) {
+    window.location.href = "/components/forms/numberForm.html";
+  } else {
+    winnerDiv.style.display = "none";
+    gameDiv.style.display = "flex";
+  }
+});
+nextButton.style.display = "none";
+winnerDiv.appendChild(nextButton);
 
 nextTeam(i);

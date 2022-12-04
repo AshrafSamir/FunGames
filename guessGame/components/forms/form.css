@@ -58,3 +58,11 @@ input {
   border-radius: 7px;
   font-size: 1rem;
 }
+
+#header {
+  font-size: 4rem;
+  position: absolute;
+  color: #eb5e28;
+  top: -8rem;
+  margin: 0;
+}

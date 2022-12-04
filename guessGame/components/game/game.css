@@ -18,6 +18,19 @@ body {
   align-items: center;
   flex-direction: column;
 }
+#winner {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #fffcf2;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 #card {
   width: 15rem;
@@ -48,7 +61,8 @@ body {
   align-items: center;
 }
 
-#phase {
+#phase,
+#winnerHeader {
   font-size: 4rem;
   position: absolute;
   color: #eb5e28;
@@ -92,7 +106,8 @@ body {
   bottom: 15rem;
 }
 
-#correctButton {
+#correctButton,
+#nextButton {
   width: 10rem;
   height: 4rem;
   margin-top: 2rem;
@@ -103,29 +118,13 @@ body {
   box-shadow: 0 0 10px 0 rgb(233, 207, 207);
   font-size: 2rem;
 }
-#correctButton:hover {
+
+#correctButton:hover,
+#nextButton:hover {
   background-color: #fffcf2;
   box-shadow: 0 0 20px 0 #eb5e28;
   cursor: pointer;
 }
-
-/* #turnElRight {
-  color: #252422;
-  position: absolute;
-  right: 3rem;
-  top: 12rem;
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-#turnElLeft {
-  color: #252422;
-  position: absolute;
-  left: 3rem;
-  top: 12rem;
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px #000000;
-} */
 
 #turnImgRight {
   position: absolute;
