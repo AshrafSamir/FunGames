@@ -1,0 +1,74 @@
+body{
+    background: #F0EBE3;
+}
+#container{
+    background: #002B5B;
+    position: absolute;
+    
+    margin-left: 170px;
+    margin-bottom: 200px;
+    margin-top: 75px;
+    height: 544px;
+    width: 1088px;
+    box-shadow: 10px 10px 5px #8FE3CF;
+    border-radius: 25px;
+}
+#user,#computer{
+    color: white;
+    position: absolute;
+    top: 12px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#user{
+    left: 262px;
+
+}
+#computer{
+    left: 806px;
+}
+
+#userpall,#computerpall{
+    position: absolute;
+    background: #8FE3CF;
+    height: 72px;
+    width: 10px;
+    border-radius: 25px;
+    
+
+}
+#ball{
+    background-color: #FBA1A1;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+h1 {
+    text-align: center;
+    text-shadow: 0px 0px 5px #002B5B, 0px -5px 5px #8FE3CF;
+}
+#comm{
+    position: absolute;
+    margin-left: 1000px;
+    margin-top: 0;
+    color: #FF0063;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0px 0px 5px #002B5B, 0px -5px 5px #8FE3CF;
+}
+#username{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 0;
+    color: #FF0063;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0px 0px 5px #002B5B, 0px -5px 5px #8FE3CF;
+
+}
+h6{
+    position: absolute;
+    margin-top: 1500px;
+}

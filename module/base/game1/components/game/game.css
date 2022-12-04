@@ -1,0 +1,145 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #403d39;
+}
+#game {
+  position: relative;
+  width: 60%;
+  height: 70vh;
+  background-color: #fffcf2;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#winner {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #fffcf2;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#card {
+  width: 15rem;
+  height: 20rem;
+  border: 1px solid rgb(233, 207, 207);
+  border-radius: 10px;
+  color: #ccc5b9;
+  background-color: #403d39;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#timer {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background-color: #403d39;
+  color: #eb5e28;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#phase,
+#winnerHeader {
+  font-size: 4rem;
+  position: absolute;
+  color: #eb5e28;
+  top: -8rem;
+  margin: 0;
+}
+
+#team {
+  color: #403d39;
+  font-size: 3rem;
+  position: absolute;
+  top: 1.5rem;
+}
+
+#player1 {
+  color: #252422;
+  position: absolute;
+  left: 7.5rem;
+  bottom: 8rem;
+  font-size: 2rem;
+}
+#player1Img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 5rem;
+  bottom: 15rem;
+}
+#player2 {
+  color: #252422;
+  position: absolute;
+  right: 7.5rem;
+  bottom: 8rem;
+  font-size: 2rem;
+}
+#player2Img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  right: 5rem;
+  bottom: 15rem;
+}
+
+#correctButton,
+#nextButton {
+  width: 10rem;
+  height: 4rem;
+  margin-top: 2rem;
+  color: #eb5e28;
+  background-color: #403d39;
+  border: 1px solid rgb(233, 207, 207);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgb(233, 207, 207);
+  font-size: 2rem;
+}
+
+#correctButton:hover,
+#nextButton:hover {
+  background-color: #fffcf2;
+  box-shadow: 0 0 20px 0 #eb5e28;
+  cursor: pointer;
+}
+
+#turnImgRight {
+  position: absolute;
+  right: 7.5rem;
+  top: 8rem;
+  font-size: 1.5rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+#turnImgLeft {
+  position: absolute;
+  left: 7.5rem;
+  top: 8rem;
+  font-size: 1.5rem;
+  width: 5rem;
+  height: 5rem;
+}
