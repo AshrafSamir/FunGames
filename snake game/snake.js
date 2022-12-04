@@ -69,19 +69,20 @@ function update()
         var h=document.createElement("h1");
         var ht=document.createTextNode("Game Over");
         h.appendChild(ht);
-        h.style.color="red";
+        h.style.color="#d90429";
         d.appendChild(h);
         //h2
         var h2=document.createElement("h2");
         var ht2=document.createTextNode("Your Score : "+score);
         h2.appendChild(ht2);
-        h2.style.color="red";
+        h2.style.color="#003e1f";
         d.appendChild(h2);
         //
         var b=document.createElement("button");
-        var t=document.createTextNode("Retry");
+        var t=document.createTextNode("Try again");
         b.appendChild(t);
         d.appendChild(b);
+        document.body.style.backgroundColor="#e5e5e5";
         clearInterval(tid);
         b.addEventListener("click",e=>//if click every thing will redefine again 
         {
