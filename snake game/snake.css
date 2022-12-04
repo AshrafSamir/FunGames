@@ -24,15 +24,21 @@ button
 {
     right: 50px;
     width: 6vw;
+    height: 5vh;
     align-items: center;
     justify-content: center;
     margin: auto;
     display: flex;
     color: #d90429;
-    background-color: #e5e5e5;
+    
     box-shadow: 10px 10px 5px lightblue;
-    border-radius: 34%;
+    border-radius: 10%;
     cursor: pointer;
+}
+button:hover
+{
+    color: #ffff;
+    background-color: #000000;
 }
 .snake
 {
