@@ -1,0 +1,59 @@
+body
+{
+    background-color: rgb(251, 255, 254);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    
+}
+#snakeBoard
+{
+    background-color: rgba(127, 255, 212, 0.438);
+    width: 100vmin;
+    height: 90vmin;
+    display: grid;
+    grid-template-rows: repeat(21,1fr);
+    grid-template-columns: repeat(21,1fr);
+    box-shadow: 10px 10px 5px lightblue;
+  
+}
+button
+{
+    right: 50px;
+    width: 5vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    color: blue;
+    box-shadow: 10px 10px 5px lightblue;
+    border-radius: 20%;
+}
+.snake
+{
+background-color: rgba(4, 4, 158, 0.973);
+border: 0.25vmin solid black;
+border-radius: 20%;
+}
+h1{
+    font-size: 100px;
+    margin: auto;
+    text-shadow:  2px 2px 4px #000000;;
+   
+}
+h2{
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    text-shadow:  2px 2px 2px #000000;;
+    display: flex;
+}
+.food
+{
+    background-color: rgba(247, 19, 171, 0.849);
+border: 0.25vmin solid black;
+border-radius: 80%;
+}
