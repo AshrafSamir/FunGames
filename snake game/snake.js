@@ -6,6 +6,7 @@ var input={x:0,y:0};
 var tid;
 var score=0;
 var snakboard=document.getElementById("snakeBoard");
+var heading=document.getElementById("heading");
 //get key code of keyboard
 function getInputDirection()
 {
@@ -63,7 +64,10 @@ function update()
     }
     else //if gameover
     {
+        var head=document.getElementById("heading");
+        head.remove();
         snakboard.remove();
+        heading.remove();
         var d=document.createElement("div");
         document.body.appendChild(d);
         var h=document.createElement("h1");
@@ -87,6 +91,11 @@ function update()
         b.addEventListener("click",e=>//if click every thing will redefine again 
         {
             d.remove();
+            var head=document.createElement("h1");
+            head.id="heading";
+            var t=document.createTextNode("Snake Game");
+            head.appendChild(t);
+            document.body.appendChild(head);
             var dn=document.createElement("div");
             dn.id="snakeBoard";
             document.body.appendChild(dn);
