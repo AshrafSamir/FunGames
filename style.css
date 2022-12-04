@@ -1,0 +1,86 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    width: 100%;
+    background-image: url("images/home2.jfif");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 100vh;
+}
+
+.links a
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.lolo
+{
+    float: left;
+}
+.links
+{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.clear
+{
+    clear: both;
+}
+
+.p-content
+
+{
+    margin-top: 50px;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #fffcf2;
+}
+.p-content h3 , .p-content h2 , .p-content p ,.p-content button
+{
+    margin-top: 50px;
+}
+.p-content h3
+{
+    font-size: 30px;
+}
+.p-content h2
+{
+    font-size: 65px;
+    color: #fffcf2;
+}
+.p-content p
+{
+    font-size: 20px;
+}
+.p-content button
+{
+    background-color: #8e7745;
+    padding: 1%;
+    color: white;
+    border-radius: 10%;
+    margin-bottom: 10%;
+}
+.p-content .contact
+{
+    background-color: rgb(255, 255, 255,0.0) ;
+    border-style:solid ;
+    border-width: 2px;
+    border-color: #eb5e28;
+}
+.p-content button:hover
+{
+    background-color: #eb5e28;
+    color: #ccc5b9;
+    cursor:pointer;
+}
+.p-content .learn
+{
+    border: none;
+}

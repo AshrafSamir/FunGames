@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="numberForm.js" defer></script>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div id="form">
+      <h1 id="header">Adjust Your Game Play</h1>
+      <form id="form" action="nameForm.html" method="get">
+        <span style="display: block">
+          <span for="numberOfPlayers">Select number of players:</label>
+          <select name="numberOfPlayers" id="numberOfPlayers">
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </span>
+
+        <span style="display: block">
+          <span  style="display: block">
+            <input type="number" min="2" max="5" name="numberOfCards" id="numberOfCards" placeholder="N# Cards per player" class="inputNumber" />
+          </span>
+          
+          <!-- <select name="numberOfCards" id="numberOfCards">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select> -->
+        </span>
+        <span style="display: block">
+          
+          <input type="number" min="0" max="10" name="time_input" placeholder="N# Minutes per team" class="inputNumber" />
+        </span>
+        <span style="display: block">
+          <button type="submit">Submit</button>
+        </span>
+      </form>
+    </div>
+  </body>
+</html>
