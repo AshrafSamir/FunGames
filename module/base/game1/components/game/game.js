@@ -221,7 +221,7 @@ nextButton.setAttribute("id", "nextButton");
 nextButton.innerText = "Next";
 nextButton.addEventListener("click", function () {
   if (phaseNumber == 4) {
-    window.location.href = "/components/forms/numberForm.html";
+    window.location.href = "../forms/numberForm.html";
   } else {
     winnerDiv.style.display = "none";
     gameDiv.style.display = "flex";

@@ -1,45 +1,55 @@
-.form
-{
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    padding: 50px;
-   
+body {
+  background-image: url("/module/images/home2.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-input
-{
-   width: 100%;
-    padding: 20px;
-    margin:20px 0px ;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    background-color: gainsboro;
+.form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 50px;
 }
-h2
-{
-    font-size: 50px;
+input {
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: #ccc5b9;
 }
-button
-{
-    padding: 10px 20px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(69, 69, 150);
-    cursor: pointer;
-    color: aliceblue;
+h2 {
+  font-size: 50px;
+  color: #fffcf2;
 }
-p
-{
-    text-align: left;
-    
+button {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(69, 69, 150);
+  cursor: pointer;
+  color: #252422;
+  background-color: #eb5e28;
 }
-.colorRed
-{
-    color: red;
+p {
+  text-align: left;
 }
-.d-none
-{
-    display: none;
+.colorRed {
+  color: #eb5e28;
+}
+.d-none {
+  display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #ccc5b9 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #252422 !important;
 }

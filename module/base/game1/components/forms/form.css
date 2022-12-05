@@ -3,7 +3,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #403d39;
+  /* background-color: #403d39; */
+  background-image: url("/module/images/home2.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 div {
@@ -15,7 +19,7 @@ div {
   position: relative;
   width: 60%;
   height: 70vh;
-  background-color: #fffcf2;
+  background-color: rgba(255, 252, 242, 0.4);
   border: 1px solid #000;
   border-radius: 10px;
   margin-top: 10%;
@@ -27,7 +31,7 @@ button {
   margin-top: 2rem;
   color: #eb5e28;
   background-color: #403d39;
-  border: 1px solid rgb(233, 207, 207);
+  border: 1px solid;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgb(233, 207, 207);
   font-size: 1.5rem;
@@ -52,10 +56,8 @@ input {
   width: 14rem;
   height: 2rem;
   margin-top: 2rem;
-  color: #403d39;
   background-color: #ccc5b9;
-
-  border-radius: 7px;
+  /* border-radius: 7px; */
   font-size: 1rem;
 }
 

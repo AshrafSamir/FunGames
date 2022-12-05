@@ -79,7 +79,6 @@ function createCards() {
   localStorage.setItem("cards", newCards);
   cards.push(card);
   card = "";
-  let url =
-    "/components/game/game.html?timePerTeam=" + timePerTeam + "&teams=" + teams;
+  let url = "../game/game.html?timePerTeam=" + timePerTeam + "&teams=" + teams;
   window.location.href = url;
 }

@@ -3,13 +3,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #403d39;
+  /* background-color: #403d39; */
+  background-image: url("/module/images/home2.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #game {
   position: relative;
   width: 60%;
   height: 70vh;
-  background-color: #fffcf2;
+  background-color: rgba(255, 252, 242, 0.4);
   border: 1px solid #000;
   border-radius: 10px;
   margin-top: 10%;
@@ -22,7 +26,7 @@ body {
   position: relative;
   width: 60%;
   height: 100%;
-  background-color: #fffcf2;
+  background-color: rgba(255, 252, 242, 0.4);
   border: 1px solid #000;
   border-radius: 10px;
   margin-top: 10%;
@@ -35,7 +39,7 @@ body {
 #card {
   width: 15rem;
   height: 20rem;
-  border: 1px solid rgb(233, 207, 207);
+  border: 1px solid;
   border-radius: 10px;
   color: #ccc5b9;
   background-color: #403d39;
@@ -113,7 +117,7 @@ body {
   margin-top: 2rem;
   color: #eb5e28;
   background-color: #403d39;
-  border: 1px solid rgb(233, 207, 207);
+  border: 1px solid;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgb(233, 207, 207);
   font-size: 2rem;
