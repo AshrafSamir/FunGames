@@ -1,11 +1,11 @@
 It is a website with mixed games in it
 
-Game1:
+Snake:
 
-Game2:
+Guess:
 
-Game3:
+Wordle:
 
-Game4:
+PingPong:
 
-Game5:
+BreakOut:
