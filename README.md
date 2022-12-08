@@ -1,13 +1,17 @@
-It is a website with mixed games in it
+# Fun Game is a website with mixed games in it
 
-Ping Bong:
+## Using HTML - CSS - JAVASCRIPT
 
-Wordlee:
+## in this website we have 5 games
 
-Snake:
+- Ping Bong developed by Rehab Mohamad
 
-Breakout:
+- Wordlee developed by Menna Osama
 
-Guess:
+- Snake developed by Fayrouz Hussien
+
+- Breakout developed by Ahmed Ayman
+
+- Guess developed by Ashraf Samer
 
 
